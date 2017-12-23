@@ -7,9 +7,9 @@ import (
 
 	"runtime"
 
+	img "github.com/veandco/go-sdl2/img"
 	"github.com/veandco/go-sdl2/sdl"
-	img "github.com/veandco/go-sdl2/sdl_image"
-	ttf "github.com/veandco/go-sdl2/sdl_ttf"
+	ttf "github.com/veandco/go-sdl2/ttf"
 )
 
 func run() error {
@@ -66,7 +66,7 @@ func drawTitle(r *sdl.Renderer, text string) error {
 	}
 	defer f.Close()
 
-	s, err := f.RenderUTF8_Solid(text, sdl.Color{R: 255, G: 100, B: 0, A: 255})
+	s, err := f.RenderUTF8Solid(text, sdl.Color{R: 255, G: 100, B: 0, A: 255})
 	if err != nil {
 		return fmt.Errorf("Error while rendering title: %v", err)
 	}
